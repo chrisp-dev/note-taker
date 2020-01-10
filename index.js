@@ -15,8 +15,12 @@ app.get('/notes', (req, res) => {
 });
 
 app.get('/api/notes', (req, res) => {
-    const notes = notesDB.getData();
-
+    res.json(notesDB.getData());
+    // notesDB.getData().then(data => {
+    //     res.json(data);
+    // }).catch(err => {
+    //     res.json(err);
+    // });
 });
 
 app.post('/api/notes', (req, res) => {
