@@ -105,3 +105,4 @@ dist
 
 # Db.json
 db/*.json
+db/db.json
