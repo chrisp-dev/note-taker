@@ -23,6 +23,10 @@ app.get('/api/notes', (req, res) => {
     // });
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+    res.json(notesDB.delete(req.params.id));
+});
+
 app.post('/api/notes', (req, res) => {
     const newNote = new Note(req.body);
     notesDB.saveData(newNote);
