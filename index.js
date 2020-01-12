@@ -24,7 +24,7 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-    res.json(notesDB.delete(req.params.id));
+    res.json(notesDB.deleteData(req.params.id));
 });
 
 app.post('/api/notes', (req, res) => {

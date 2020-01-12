@@ -34,7 +34,6 @@ var deleteNote = function (id) {
 
 // If there is an activeNote, display it, otherwise render empty inputs
 var renderActiveNote = function () {
-  console.log(activeNote);
   $saveNoteBtn.hide();
 
   if (activeNote.id) {
@@ -113,7 +112,8 @@ var renderNoteList = function (notes) {
   for (var i = 0; i < notes.length; i++) {
     var note = notes[i];
 
-    var $li = $("<li class='list-group-item'>").data(note);
+    var $li = $("<li class='list-group-item'>");
+    $li.data(note);
     var $span = $("<span>").text(note.title);
     var $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
